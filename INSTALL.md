@@ -9,6 +9,7 @@ plugin as an email attachment.
 |---|---|
 | Claude, in the browser or the desktop app | "Claude" below |
 | Claude Code | "Claude Code" below |
+| ChatGPT, in the browser | "ChatGPT" below |
 | Codex | "Codex" below |
 | No AI assistant | Use Oath's client dashboard. It asks the same questions |
 
@@ -18,24 +19,57 @@ company's Claude" at the end. Without that step the **Connect** button stays off
 
 ## Claude (browser or desktop app)
 
-It takes about 3 minutes.
+It takes about 3 minutes. You download nothing: Claude fetches the plugin itself.
+
+1. In Claude, open **Customize** in the left bar, then **Plugins**.
+2. Press **Add** (top right), then **Add marketplace**.
+3. In the field, type `oath-tech/oath-plugin`, choose it from the list, and press **Sync**.
+4. Install **Oath** from the marketplace's list.
+5. On the plugin's page, find **Oath-Verified** under Connectors and press **Connect**.
+6. A window named "Add custom connector" opens. **Check the address is exactly
+   `https://review.oathverified.com/api/mcp`.** If it is, change nothing and press
+   **Continue**. If it is not, stop and tell us.
+7. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
+   Oath sends to it.
+8. Press **Try in chat**. Claude starts the questions.
+9. Claude asks if it may use Oath's tools, one time for each tool. For the tools that
+   read, you can press **Always allow**. Two tools send to Oath:
+   `submit_onboarding_answers` and `report_connection_setup`. For those, press
+   **Allow once** each time, unless you are happy that your answers go without a pop-up.
+
+### If "Add marketplace" does not work: upload the file
 
 1. Download `oath-plugin-<version>.zip` from this repo's
    [latest release](https://github.com/oath-tech/oath-plugin/releases/latest), and
    nowhere else.
-2. In Claude, open **Plugins**. It is in the left bar, or under **Customize**.
-3. Press **Add**, then **Upload plugin**, and choose the file.
-4. On the plugin's page, find **Oath-Verified** under Connectors and press **Connect**.
-5. A window named "Add custom connector" opens. **Check the address is exactly
-   `https://review.oathverified.com/api/mcp`.** If it is, change nothing and press
-   **Continue**. If it is not, stop and tell us.
+2. In Claude, open **Customize**, then **Plugins**. Press **Add**, then **Upload plugin**,
+   and choose the file.
+3. Go on from step 5 above.
+
+## ChatGPT (browser)
+
+It takes about 3 minutes. Tried on a ChatGPT Plus plan. ChatGPT needs no file: you give
+it Oath's address.
+
+1. In ChatGPT, open **Plugins** in the left bar.
+2. Press **Add** (top right), then **Add custom MCP server**.
+3. Fill in the form:
+   - **Name:** `Oath Verified`
+   - **Server URL:** `https://review.oathverified.com/api/mcp`. Type it exactly.
+   - **Authentication:** leave **OAuth**. Change nothing under Advanced OAuth settings.
+4. ChatGPT shows a warning about custom servers. Tick **I understand and want to
+   continue**, then press **Create as a plugin**.
+5. A window named "Connect Oath Verified" opens. Press **Continue to Oath Verified**.
 6. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
-   Oath sends to it.
-7. Press **Try in chat**. Claude starts the questions.
-8. Claude asks if it may use Oath's tools, one time for each tool. For the tools that
-   read, you can press **Always allow**. Two tools send to Oath:
-   `submit_onboarding_answers` and `report_connection_setup`. For those, press
-   **Allow once** each time, unless you are happy that your answers go without a pop-up.
+   Oath sends to it. Do not use the Google or Microsoft buttons.
+7. You are back in ChatGPT. Open **Oath Verified** under Installed and press **Try in
+   chat**. Type: `Onboard me with Oath`.
+8. ChatGPT reads from Oath without asking. Before it sends your answers to Oath, it asks
+   "Allow ChatGPT to use Oath Verified?" and shows what goes. Press **Allow once** each
+   time, unless you are happy that your answers go without a pop-up.
+
+If you do not see **Add custom MCP server**, your plan or your company's ChatGPT does not
+allow it. Use Oath's client dashboard.
 
 ## Claude Code
 
