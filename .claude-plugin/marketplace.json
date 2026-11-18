@@ -1,0 +1,14 @@
+{
+  "name": "oath",
+  "description": "Oath's plugin: connect your Claude or Codex to Oath for your audit.",
+  "owner": {
+    "name": "Oath"
+  },
+  "plugins": [
+    {
+      "name": "oath",
+      "source": "./plugin",
+      "description": "Connect to Oath: sign in, answer the onboarding questions, share read-only access to your data, and ask where your audit stands."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Oath-Verified": {
+      "type": "http",
+      "url": "https://review.oathverified.com/api/mcp"
+    }
+  }
+}
