@@ -7,8 +7,8 @@ With it you can:
 - give Oath read-only access to your data, one system at a time,
 - ask where your audit stands and what Oath still needs from you.
 
-It is a choice. Oath's own page asks the same questions, and what you answer in one place
-shows in the other.
+The plugin is optional. You can also answer the same questions on Oath's client dashboard.
+Your answers show up in both places.
 
 **How to install it:** [INSTALL.md](INSTALL.md).
 

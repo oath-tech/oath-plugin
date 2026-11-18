@@ -23,19 +23,16 @@ It takes about 3 minutes.
 1. Download `oath-plugin-<version>.zip` from this repo's
    [latest release](https://github.com/oath-tech/oath-plugin/releases/latest), and
    nowhere else.
-2. Check the file. In a terminal, run `shasum -a 256 oath-plugin-<version>.zip`. The
-   result must be the same as the SHA-256 on the release page. If it is not, stop and
-   tell us.
-3. In Claude, open **Plugins**. It is in the left bar, or under **Customize**.
-4. Press **Add**, then **Upload plugin**, and choose the file.
-5. On the plugin's page, find **Oath-Verified** under Connectors and press **Connect**.
-6. A window named "Add custom connector" opens. **Check the address is exactly
+2. In Claude, open **Plugins**. It is in the left bar, or under **Customize**.
+3. Press **Add**, then **Upload plugin**, and choose the file.
+4. On the plugin's page, find **Oath-Verified** under Connectors and press **Connect**.
+5. A window named "Add custom connector" opens. **Check the address is exactly
    `https://review.oathverified.com/api/mcp`.** If it is, change nothing and press
    **Continue**. If it is not, stop and tell us.
-7. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
+6. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
    Oath sends to it.
-8. Press **Try in chat**. Claude starts the questions.
-9. Claude asks if it may use Oath's tools, one time for each tool. For the tools that
+7. Press **Try in chat**. Claude starts the questions.
+8. Claude asks if it may use Oath's tools, one time for each tool. For the tools that
    read, you can press **Always allow**. Two tools send to Oath:
    `submit_onboarding_answers` and `report_connection_setup`. For those, press
    **Allow once** each time, unless you are happy that your answers go without a pop-up.
