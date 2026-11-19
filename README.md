@@ -1,6 +1,6 @@
 # Oath plugin
 
-The Oath plugin connects your own AI assistant (Claude or Codex) to Oath, your audit firm.
+The Oath plugin connects your own AI assistant (Claude, ChatGPT or Codex) to Oath, your audit firm.
 With it you can:
 
 - answer Oath's onboarding questions in a conversation,
