@@ -2,7 +2,7 @@
   "mcpServers": {
     "Oath-Verified": {
       "type": "http",
-      "url": "https://review.oathverified.com/api/mcp"
+      "url": "https://app.oathverified.com/api/mcp"
     }
   }
 }
