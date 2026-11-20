@@ -24,13 +24,15 @@ It takes about 3 minutes. You download nothing: Claude fetches the plugin itself
 1. In Claude, open **Customize** in the left bar, then **Plugins**.
 2. Press **Add** (top right), then **Add marketplace**.
 3. In the field, type `oath-tech/oath-plugin`, choose it from the list, and press **Sync**.
+   The name must be exactly that, with the dash in `oath-tech`. Oath has no other repo
+   for the plugin.
 4. Install **Oath** from the marketplace's list.
 5. On the plugin's page, find **Oath-Verified** under Connectors and press **Connect**.
 6. A window named "Add custom connector" opens. **Check the address is exactly
    `https://app.oathverified.com/api/mcp`.** If it is, change nothing and press
    **Continue**. If it is not, stop and tell us.
 7. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
-   Oath sends to it.
+   Oath sends to it. Do not use a Google or Microsoft button, if the page shows one.
 8. Press **Try in chat**. Claude starts the questions.
 9. Claude asks if it may use Oath's tools, one time for each tool. For the tools that
    read, you can press **Always allow**. Two tools send to Oath:
@@ -42,9 +44,12 @@ It takes about 3 minutes. You download nothing: Claude fetches the plugin itself
 1. Download `oath-plugin-<version>.zip` from this repo's
    [latest release](https://github.com/oath-tech/oath-plugin/releases/latest), and
    nowhere else.
-2. In Claude, open **Customize**, then **Plugins**. Press **Add**, then **Upload plugin**,
+2. Check the file is the one Oath built. The release page gives its SHA-256. In a
+   terminal, run `shasum -a 256` on the file you downloaded, and compare the two. If they
+   differ, do not use the file, and tell us.
+3. In Claude, open **Customize**, then **Plugins**. Press **Add**, then **Upload plugin**,
    and choose the file.
-3. Go on from step 5 above.
+4. Go on from step 5 above.
 
 ## ChatGPT (browser)
 
@@ -83,9 +88,17 @@ allow it. Use Oath's client dashboard.
    claude plugin install oath@oath
    ```
 
-2. Start a new session. Type `/mcp`, choose **Oath-Verified**, and sign in with your work
+2. Check the address. Run:
+
+   ```bash
+   claude mcp list
+   ```
+
+   The line for **Oath-Verified** must show exactly
+   `https://app.oathverified.com/api/mcp`. If it does not, stop and tell us.
+3. Start a new session. Type `/mcp`, choose **Oath-Verified**, and sign in with your work
    email and the code.
-3. Type: `Onboard me with Oath`.
+4. Type: `Onboard me with Oath`.
 
 ## Codex
 
@@ -99,14 +112,22 @@ allow it. Use Oath's client dashboard.
    codex plugin add oath@oath
    ```
 
-2. Sign in:
+2. Check the address. Run:
+
+   ```bash
+   codex mcp list
+   ```
+
+   The line for **Oath-Verified** must show exactly
+   `https://app.oathverified.com/api/mcp`. If it does not, stop and tell us.
+3. Sign in:
 
    ```bash
    codex mcp login Oath-Verified
    ```
 
    A sign-in page opens. Type your work email, then the code.
-3. Start Codex and type: `Onboard me with Oath`.
+4. Start Codex and type: `Onboard me with Oath`.
 
 ## What to say
 
