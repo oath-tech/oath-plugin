@@ -114,7 +114,6 @@ allow it. Use Oath's client dashboard.
 |---|---|
 | "Onboard me with Oath" | It asks Oath's questions and sends your answers. It shows you what went. |
 | "Connect my data to Oath" | It gives you the steps to give Oath read-only access to each place you named. |
-| "What is Oath missing from me?" | It reads the documents that Oath still needs. |
 
 ## If it does not work
 
