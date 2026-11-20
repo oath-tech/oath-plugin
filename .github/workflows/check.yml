@@ -8,12 +8,29 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      OATH_BLOCKED_WORDS: ${{ secrets.OATH_BLOCKED_WORDS }}
+      # A pull request from a fork gets no secret. Every other run must have the list.
+      OATH_REQUIRE_PRIVATE: ${{ (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository) && '1' || '0' }}
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - name: No internal words
-        env:
-          OATH_BLOCKED_WORDS: ${{ secrets.OATH_BLOCKED_WORDS }}
+        with:
+          fetch-depth: 0
+      - name: No internal words in the files
         run: scripts/check-words.sh .
+      - name: No internal words in the pull request's text
+        if: github.event_name == 'pull_request'
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          {
+            printf '%s\n' "$PR_TITLE"
+            printf '%s\n' "$PR_BODY"
+            git log --format='%s%n%b' "$BASE_SHA..$HEAD_SHA"
+          } | scripts/check-words.sh --stdin
       - name: JSON files parse
         run: |
           for f in .claude-plugin/marketplace.json plugin/.claude-plugin/plugin.json plugin/.mcp.json; do
