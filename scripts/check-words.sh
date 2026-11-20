@@ -15,7 +15,7 @@ set -euo pipefail
 
 builtin=$(cat <<'P'
 vercel\.app
-TX[- ]?[0-9]+
+(^|[^a-z])TX[- ]?[0-9]+
 clickup\.com
 localhost
 ngrok
@@ -92,7 +92,9 @@ for f in "${files[@]}"; do
   if [ "$(LC_ALL=C tr -d '\000' < "$f" | wc -c)" != "$(wc -c < "$f")" ]; then
     echo "  $rel: holds a NUL byte"; found=1; continue
   fi
-  if ! perl -CSD -ne 'exit 1 if /[\x{200B}-\x{200D}\x{2060}\x{FEFF}]/' "$f"; then
+  # Format characters (zero-width, text direction, soft hyphen, tags, unseen operators)
+  # and the variation selectors past the basic plane.
+  if ! perl -CSD -ne 'exit 1 if /[\p{Cf}\x{E0100}-\x{E01EF}]/' "$f"; then
     echo "  $rel: holds a character that cannot be seen"; found=1
   fi
 done

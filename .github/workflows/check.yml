@@ -1,6 +1,9 @@
 name: check
 on:
   pull_request:
+    # 'edited' so that a new title or body is checked too: the title becomes the merge
+    # commit's message.
+    types: [opened, synchronize, reopened, edited]
   push:
     branches: [main]
 permissions:
@@ -31,6 +34,19 @@ jobs:
             printf '%s\n' "$PR_BODY"
             git log --format='%s%n%b' "$BASE_SHA..$HEAD_SHA"
           } | scripts/check-words.sh --stdin
+      - name: No internal words in the commit messages on main
+        # The last line of defence: the merge dialog can still change a message.
+        if: github.event_name == 'push'
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          if git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
+            range="$BEFORE_SHA..$AFTER_SHA"
+          else
+            range="$AFTER_SHA~1..$AFTER_SHA"
+          fi
+          git log --format='%s%n%b' "$range" | scripts/check-words.sh --stdin
       - name: JSON files parse
         run: |
           for f in .claude-plugin/marketplace.json plugin/.claude-plugin/plugin.json plugin/.mcp.json; do
