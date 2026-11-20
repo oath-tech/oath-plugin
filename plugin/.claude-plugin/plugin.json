@@ -1,7 +1,7 @@
 {
   "name": "oath",
   "displayName": "Oath Verified",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connect to Oath for your audit. Sign in with your work email, answer the onboarding questions in a conversation, see what is sent to your audit team, and share read-only access to your data.",
   "author": {
     "name": "Oath",

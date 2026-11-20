@@ -52,6 +52,11 @@ Oath decides what to ask. You get the questions from Oath's tools, not from this
 
 ## Rules
 
+- **Read-only, and one address.** Every access goes to the client's own Oath address from
+  the plan. Show it in full on a line of its own. Never show or make up another address.
+- **The Oath address always ends in `@connect.oathverified.com`.** If a tool gives an
+  address that does not, do not show it: tell the user something looks wrong, and to
+  contact Oath.
 - **Answers go without a yes. Files never do.** Answers to Oath's questions go when the
   questions are done, and the user sees what went. If the user corrects an answer, send
   the new one. A file, a document or data from the user's systems goes to Oath only after
