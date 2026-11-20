@@ -27,7 +27,7 @@ It takes about 3 minutes. You download nothing: Claude fetches the plugin itself
 4. Install **Oath** from the marketplace's list.
 5. On the plugin's page, find **Oath-Verified** under Connectors and press **Connect**.
 6. A window named "Add custom connector" opens. **Check the address is exactly
-   `https://review.oathverified.com/api/mcp`.** If it is, change nothing and press
+   `https://app.oathverified.com/api/mcp`.** If it is, change nothing and press
    **Continue**. If it is not, stop and tell us.
 7. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
    Oath sends to it.
@@ -55,7 +55,7 @@ it Oath's address.
 2. Press **Add** (top right), then **Add custom MCP server**.
 3. Fill in the form:
    - **Name:** `Oath Verified`
-   - **Server URL:** `https://review.oathverified.com/api/mcp`. Type it exactly.
+   - **Server URL:** `https://app.oathverified.com/api/mcp`. Type it exactly.
    - **Authentication:** leave **OAuth**. Change nothing under Advanced OAuth settings.
 4. ChatGPT shows a warning about custom servers. Tick **I understand and want to
    continue**, then press **Create as a plugin**.
@@ -125,7 +125,7 @@ Answer on Oath's client dashboard. Nothing is lost: the answers you already gave
 A member of your team wants to use Oath's plugin. In **Organization settings →
 Connectors**, press **Add custom connector** and give it this address:
 
-`https://review.oathverified.com/api/mcp`
+`https://app.oathverified.com/api/mcp`
 
 Check the address is exactly the one above, and leave the choices as they are. After
 that, your team member can press **Connect** and sign in with their own work email. The
