@@ -66,12 +66,15 @@ it Oath's address.
    continue**, then press **Create as a plugin**.
 5. A window named "Connect Oath Verified" opens. Press **Continue to Oath Verified**.
 6. A sign-in page opens, on `auth.app.oathverified.com`. Type your work email, then the code that
-   Oath sends to it. Do not use the Google or Microsoft buttons.
-7. You are back in ChatGPT. Open **Oath Verified** under Installed and press **Try in
+   Oath sends to it. Do not use the Google or Microsoft buttons. If this browser is
+   already signed in to Oath, the page does not show: go on to the next step.
+7. A page named "Connect ChatGPT to Oath" opens, on the same address. Press **Allow**.
+8. You are back in ChatGPT. Open **Oath Verified** under Installed and press **Try in
    chat**. Type: `Onboard me with Oath`.
-8. ChatGPT reads from Oath without asking. Before it sends your answers to Oath, it asks
-   "Allow ChatGPT to use Oath Verified?" and shows what goes. Press **Allow once** each
-   time, unless you are happy that your answers go without a pop-up.
+9. If you work with Oath for more than one organization, ChatGPT asks which one. Pick it.
+10. ChatGPT reads from Oath without asking, and shows you what it sent each time. It may
+    first ask "Allow ChatGPT to use Oath Verified?" and show what goes. If it does, press
+    **Allow once** each time, unless you are happy that your answers go without a pop-up.
 
 If you do not see **Add custom MCP server**, your plan or your company's ChatGPT does not
 allow it. Use Oath's client dashboard.
@@ -97,8 +100,10 @@ allow it. Use Oath's client dashboard.
    The line for **Oath-Verified** must show exactly
    `https://app.oathverified.com/api/mcp`. If it does not, stop and tell us.
 3. Start a new session. Type `/mcp`, choose **Oath-Verified**, and sign in with your work
-   email and the code.
-4. Type: `Onboard me with Oath`.
+   email and the code. A page named "Connect ... to Oath" then opens, on
+   `auth.app.oathverified.com`. Press **Allow**.
+4. Type: `Onboard me with Oath`. If you work with Oath for more than one organization,
+   say which one.
 
 ## Codex
 
