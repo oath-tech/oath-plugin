@@ -31,7 +31,7 @@ It takes about 3 minutes. You download nothing: Claude fetches the plugin itself
 6. A window named "Add custom connector" opens. **Check the address is exactly
    `https://app.oathverified.com/api/mcp`.** If it is, change nothing and press
    **Continue**. If it is not, stop and tell us.
-7. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
+7. A sign-in page opens, on `auth.app.oathverified.com`. Type your work email, then the code that
    Oath sends to it. Do not use a Google or Microsoft button, if the page shows one.
 8. Press **Try in chat**. Claude starts the questions.
 9. Claude asks if it may use Oath's tools, one time for each tool. For the tools that
@@ -65,7 +65,7 @@ it Oath's address.
 4. ChatGPT shows a warning about custom servers. Tick **I understand and want to
    continue**, then press **Create as a plugin**.
 5. A window named "Connect Oath Verified" opens. Press **Continue to Oath Verified**.
-6. A sign-in page opens, on `api.descope.com`. Type your work email, then the code that
+6. A sign-in page opens, on `auth.app.oathverified.com`. Type your work email, then the code that
    Oath sends to it. Do not use the Google or Microsoft buttons.
 7. You are back in ChatGPT. Open **Oath Verified** under Installed and press **Try in
    chat**. Type: `Onboard me with Oath`.
